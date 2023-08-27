@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//un array de cossas
 const cards = <Map<String,dynamic>>[
   { 'elevation': 0.0, 'label': 'Elevation 0' },
   { 'elevation': 1.0, 'label': 'Elevation 1' },
@@ -30,15 +31,19 @@ class CardsScreen extends StatelessWidget {
   }
 }
 
+
+//widget independiente que es un array de widgets
 class _CardsView extends StatelessWidget {
   const _CardsView();
 
   @override
   Widget build(BuildContext context) {
+    
     return SingleChildScrollView(
       child: Column(
         children: [
           
+          //obtengo el valor del array y devuelvo un widget personalizado
           ...cards.map( 
             (card) => _CardType1( elevation: card['elevation'], label: card['label'] ),
           ),
@@ -93,7 +98,6 @@ class _CardType1 extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: Text( label ),
             )
-
           ],
         ),
       ),
@@ -236,8 +240,6 @@ class _CardType4 extends StatelessWidget {
               ),
             ),
           ),
-
-
         ],
       ),
     );
